@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\UsersRequest;
 use App\User;
 use App\Role;
 use Illuminate\Http\Request;
@@ -37,9 +38,24 @@ class AdminUsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsersRequest $request)
     {
-        //
+        // return $request->all();
+ 
+        /* persisting the data to database */
+          User::create($request->all());
+       
+        /* end of persisiting data */
+        
+         /*============================================
+         =            redirecting to admin            =
+         ============================================*/
+         
+          return redirect('/admin/users');
+         
+         /*=====  End of redirecting to admin  ======*/
+         
+       
     }
 
     /**
