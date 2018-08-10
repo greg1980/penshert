@@ -122,8 +122,8 @@
             <li class="active"> <a href="./"><i class="icon-home"></i>Home</a></li>
             <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Users </a>
               <ul id="dashvariants" class="collapse list-unstyled">
-                <li><a href="#">All Users</a></li>
-                <li><a href="#">Create</a></li>
+                <li><a href="{{ url('admin/users') }}">All Users</a></li>
+                <li><a href="{{ url('admin/users/create') }}">Create</a></li>
                 <li><a href="#">Page</a></li>
                 <li><a href="#">Page</a></li>
               </ul>
