@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\UsersRequest;
 use App\User;
 use App\Photo;
 use App\Role;
+use App\Http\Requests\UsersRequest;
 use Illuminate\Http\Request;
 
 class AdminUsersController extends Controller
@@ -56,7 +56,7 @@ class AdminUsersController extends Controller
               $input['photo_id'] = $photo->id;
 
          }
-              $input['password'] =bcrypt($request->password);
+              $input['password'] = bcrypt($request->password);
               User::create($input);
 
         /* end of persisiting data */
@@ -80,7 +80,9 @@ class AdminUsersController extends Controller
      */
     public function show($id)
     {
-        //
+
+        return view('admin.users');
+       
     }
 
     /**
@@ -91,7 +93,11 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findorFail($id);
+         $roles =Role::Pluck('name','id')->all();
+
+        return view('admin.users.edit', compact('user','roles'));
+
     }
 
     /**
@@ -103,7 +109,7 @@ class AdminUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       // return view('admin/edit/{id}');
     }
 
     /**

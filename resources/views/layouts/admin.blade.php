@@ -111,10 +111,12 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="avatar">
+              <img src="{{ $user->photo ? $user->photo->file : '../../uploads/files/default.jpg' }}" alt="..." class= "img-fluid rounded-circle">
+            </div>
             <div class="title">
-              <h1 class="h4">USER NAME</h1>
-              <p>Web Designer</p>
+              <h1 class="h4">{{$user->name}}</h1>
+              <p>{{$user->role->name}}</p>
             </div>
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
