@@ -49,11 +49,20 @@
                            </div>
 
                          {!! Form::close() !!}
-                                                                     
+
+                          <div class="row bg-white">
+                          {!! form::open(['method'=>'DELETE', 'action'=> ['AdminUsersController@destroy',$user->id] ]) !!}
+
+                          <div class="form-group pull-left">
+
+                              {!! Form::submit('Delete user', ['class'=>'btn btn-danger']) !!}
+                          </div>
+                          {!! form::close() !!}
+                      </div>
 
                         </div>
 
-			        
+
 			          	
 			       </div>
     

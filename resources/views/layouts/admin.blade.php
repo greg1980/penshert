@@ -112,11 +112,11 @@
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar">
-              <img src="{{ $user->photo ? $user->photo->file : '../../uploads/files/default.jpg' }}" alt="..." class= "img-fluid rounded-circle">
+              {{--<img src="{{ $user->photo ? $user->photo->file : '../../uploads/files/default.jpg' }}" alt="..." class= "img-fluid rounded-circle">--}}
             </div>
             <div class="title">
-              <h1 class="h4">{{$user->name}}</h1>
-              <p>{{$user->role->name}}</p>
+              {{--<h1 class="h4">{{$user->name}}</h1>--}}
+              {{--<p>{{$user->role->name}}</p>--}}
             </div>
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
@@ -126,8 +126,8 @@
               <ul id="dashvariants" class="collapse list-unstyled">
                 <li><a href="{{ url('admin/users') }}">All Users</a></li>
                 <li><a href="{{ url('admin/users/create') }}">Create</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
+                <li><a href="{{ url('admin/posts') }}">Posts</a></li>
+                <li><a href="{{ url('admin/posts/create') }}">Create Posts</a></li>
               </ul>
             </li>
             <li> <a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>

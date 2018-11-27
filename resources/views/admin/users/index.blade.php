@@ -2,11 +2,14 @@
 
 @section('content')
 
+    @if(Session::has('deleted_user'));
+        <p class="bg-success">{{Session('deleted_user')}}</p>
+    @endif
 
          <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow title">
-                <h2>NBA-SLP Users</h2>
+                  <h2>NBA-SLP Users</h2>
                     <table class="table table-hover">
                         <thead>
                           <tr>

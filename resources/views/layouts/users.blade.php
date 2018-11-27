@@ -124,8 +124,8 @@
               <ul id="dashvariants" class="collapse list-unstyled">
                 <li><a href="{{ url('admin/users') }}">All Users</a></li>
                 <li><a href="{{ url('admin/users/create') }}">Create</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
+                <li><a href="{{ url('admin/posts') }}">Posts</a></li>
+                <li><a href="{{ url('admin/posts/create') }}">Create Posts</a></li>
               </ul>
             </li>
             <li> <a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
