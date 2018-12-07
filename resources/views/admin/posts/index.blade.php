@@ -29,10 +29,10 @@
                             <tr>
                                 <td>{{$post->id}}</td>
                                 <td><img height="40"src="{{$post->photo ? $post->photo->file : '../../uploads/files/default.jpg'}}" alt="" ></td>
-                                <td>{{$post->user->name}}</td>
+                                <td><a href="{{route('posts.edit',$post->id)}}">{{$post->user->name}}</a></td>
                                 <td>{{$post->category ? $post->category->name : 'uncategorized'}}</td>
                                 <td>{{$post->title}}</td>
-                                <td>{{$post->body}}</td>
+                                <td>{{str_limit($post->body, 25)}}</td>
                                 <td>{{$post->created_at->diffForHumans()}}</td>
                                 <td>{{$post->updated_at->diffForHumans()}}</td>
                             </tr>

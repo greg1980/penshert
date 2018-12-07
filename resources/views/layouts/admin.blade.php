@@ -126,13 +126,16 @@
               <ul id="dashvariants" class="collapse list-unstyled">
                 <li><a href="{{ url('admin/users') }}">All Users</a></li>
                 <li><a href="{{ url('admin/users/create') }}">Create</a></li>
-                <li><a href="{{ url('admin/posts') }}">Posts</a></li>
-                <li><a href="{{ url('admin/posts/create') }}">Create Posts</a></li>
               </ul>
             </li>
-            <li> <a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
+            <li> <a href="#variants" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Posts</a>
+            <ul id="variants" class="collapse list-unstyled">
+              <li><a href="{{ url('admin/posts') }}">Posts</a></li>
+              <li><a href="{{ url('admin/posts/create') }}">Create Posts</a></li>
+            </ul>
+            </li>
             <li> <a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
-            <li> <a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
+            <li> <a href="{{url('admin/categories')}}"> <i class="icon-padnote"></i>Categories </a></li>
             <li> <a href="login.html"> <i class="icon-interface-windows"></i>Login Page</a></li>
           </ul><span class="heading">Extras</span>
           <ul class="list-unstyled">
@@ -166,7 +169,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-sm-6">
-                  <p>Pensheart &copy; 2017-2019</p>
+                  <p>Pensheart &copy;  {{ date('Y ')}}</p>
                 </div>
                 <div class="col-sm-6 text-right">
                   <p>Design by <a href class="external">PENSHEART</a></p>

@@ -15,8 +15,8 @@ class AddPhotoIdToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
 
-          $table->string('photo_id'); /* default image added to make it work */
-          
+          $table->string('photo_id')->default('default.jpg'); /* default image added to make it work */
+
 
         });
     }

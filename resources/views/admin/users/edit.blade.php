@@ -10,7 +10,7 @@
 					        @include('includes.form_error')
                                        
                       <div class="row bg-white">
-                          {!! Form::model ($user, ['method'=>'PATCH', 'action'=> ['AdminUsersController@update',$user->id],]) !!}
+                          {!! Form::model ($user, ['method'=>'PATCH', 'action'=> ['AdminUsersController@update',$user->id],'files'=>true]) !!}
 
 
                           <div class="form-group">  

@@ -60,15 +60,10 @@ class AdminUsersController extends Controller
               $input['password'] = bcrypt($request->password);
               User::create($input);
 
-        /* end of persisiting data */
-        
-         /*============================================
-         =            redirecting to admin            =
-         ============================================*/
          
           return redirect('/admin/users');
          
-         /*=====  End of redirecting to admin  ======*/
+
          
        
     }
@@ -111,6 +106,19 @@ class AdminUsersController extends Controller
     public function update(Request $request, $id)
     {
        // return view('admin/edit/{id}');
+        $input = $request->all();
+
+
+        if ($file =$request->file('photo_id')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('uploads/files',$name);
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+        }
+
+
+        return redirect('/admin/users');
     }
 
     /**
